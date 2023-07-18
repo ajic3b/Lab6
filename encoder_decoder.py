@@ -16,7 +16,7 @@ def encode(password):#function to encode password
     return pass_string
 
 
-# decoder function
+# Jacob Ramos
 def decoder(encode_password):
     decoded_password = ""  # open string
     for num in encode_password:
