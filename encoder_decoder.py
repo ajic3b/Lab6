@@ -15,6 +15,17 @@ def encode(password):#function to encode password
         i += 1 #increments the index for the list
     return pass_string
 
+
+# decoder function
+def decoder(encode_password):
+    decoded_password = ""
+    for num in encode_password:
+        decoded_number = str((int(num) - 3) % 10)
+        decoded_password += decoded_number
+
+    return decoded_password
+
+
 if __name__ == '__main__':
     program_on = True
     while program_on:#while option 3 has not been selected
@@ -25,7 +36,10 @@ if __name__ == '__main__':
             encoded_pass = encode(password)
             print("Your password has been encoded and stored!")
             continue
-        elif option_select == 2:#will have decode function call and other necessary statements
-            pass
+        elif option_select == 2:  # will have decode function call and other necessary statements
+            decoded_pass = decoder(encoded_pass)
+            print(f"The encoded password is {encoded_pass}, and the original password is {decoded_pass}.")
+            continue
+
         elif option_select == 3:#exits program
             program_on = False
