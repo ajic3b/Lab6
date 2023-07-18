@@ -18,9 +18,9 @@ def encode(password):#function to encode password
 
 # decoder function
 def decoder(encode_password):
-    decoded_password = ""
+    decoded_password = ""  # open string
     for num in encode_password:
-        decoded_number = str((int(num) - 3) % 10)
+        decoded_number = str((int(num) - 3) % 10)  # reverts the encoded password to the original
         decoded_password += decoded_number
 
     return decoded_password
@@ -38,7 +38,7 @@ if __name__ == '__main__':
             continue
         elif option_select == 2:  # will have decode function call and other necessary statements
             decoded_pass = decoder(encoded_pass)
-            print(f"The encoded password is {encoded_pass}, and the original password is {decoded_pass}.")
+            print(f"The encoded password is {encoded_pass}, and the original password is {decoded_pass}.")  # prints message
             continue
 
         elif option_select == 3:#exits program
